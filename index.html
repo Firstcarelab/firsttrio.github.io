@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<!--
+  FIRST TRIO 「피아노 트리오의 밤」 공연 페이지
+  GitHub Pages 저장소 루트에 index.html 로 올리면 됩니다.
+
+  ■ 수정할 곳
+  1. 사진: images/ 폴더에 넣으면 자동으로 뜹니다 (없으면 악기 이름 자리표시가 보입니다)
+       images/lee.jpg   이창준 (세로 3:4 권장)
+       images/yoon.jpg  윤성근
+       images/choi.jpg  최승욱
+       images/poster.jpg  카톡 공유 썸네일용 포스터 (가로 1200×630 권장)
+  2. 예매가 열리면: "예매 오픈 예정" 버튼(두 군데)의 href 를 예매 링크로 바꾸고 글자를 "예매하기"로
+  3. 문의 이메일: 「문의 이메일」 자리에 실제 주소
+  4. 주소가 firsttrio.github.io 가 아니면 og:url, og:image 의 주소도 함께 수정
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>피아노 트리오의 밤 | FIRST TRIO</title>
+<meta name="description" content="FIRST TRIO 피아노 트리오의 밤 — 2027년 3월 6일(토) 오후 7시, 광주예술의전당 소극장. 베토벤 ‘가센하우어’, 라흐마니노프 비가적 트리오 1번, 브람스 피아노 트리오 1번 Op. 8">
+
+<!-- 카카오톡·메신저에서 링크를 보낼 때 뜨는 미리보기 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="피아노 트리오의 밤 | FIRST TRIO">
+<meta property="og:description" content="2027년 3월 6일(토) 오후 7시, 광주예술의전당 소극장. 베토벤, 라흐마니노프, 브람스">
+<meta property="og:image" content="https://firsttrio.github.io/images/poster.jpg">
+<meta property="og:url" content="https://firsttrio.github.io/">
+<meta name="theme-color" content="#16100f">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cover:    #16100f;   /* 피아노 래커 — 깊은 흑갈색 */
+    --cover-2:  #2d181d;   /* 커버 위에 비치는 와인빛 */
+    --ivory:    #efe6d6;   /* 커버 위 글자 */
+    --ivory-dim:#b5a994;
+    --gold:     #cfae6b;   /* 금박 */
+    --gold-dim: rgba(207,174,107,.32);
+    --paper:    #f2ecdf;   /* 프로그램 노트 종이 */
+    --ink:      #221b18;
+    --ink-dim:  #6f655b;
+    --garnet:   #7b2230;   /* 종이 위 인쇄 포인트 */
+    --garnet-dim: rgba(123,34,48,.22);
+    --serif-ko: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Nanum Myeongjo', serif;
+    --serif-en: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:64px; -webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+  body{
+    margin:0; background:var(--cover); color:var(--ivory);
+    font-family:var(--serif-ko); font-size:16px; line-height:1.8;
+    word-break:keep-all; overflow-wrap:break-word; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  img{display:block; max-width:100%}
+  h1,h2,h3,p,ul,ol{margin:0}
+  ul,ol{padding:0; list-style:none}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+
+  .wrap{width:min(100% - 40px, 680px); margin-inline:auto}
+  .wrap--wide{width:min(100% - 40px, 960px); margin-inline:auto}
+
+  /* 상단 바 */
+  .top{
+    position:sticky; top:0; z-index:10;
+    background:rgba(22,16,15,.84); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--gold-dim);
+  }
+  .top .wrap--wide{display:flex; align-items:center; justify-content:space-between; height:56px}
+  .wordmark{font-family:var(--serif-en); font-weight:600; font-size:15px; letter-spacing:.2em; color:var(--gold); text-decoration:none; white-space:nowrap}
+  .top nav{display:flex; gap:18px}
+  .top nav a{font-size:13.5px; color:var(--ivory-dim); text-decoration:none; white-space:nowrap}
+  .top nav a:hover{color:var(--ivory)}
+
+  /* 커버 */
+  .cover{
+    position:relative; overflow:hidden; min-height:calc(100svh - 56px);
+    background:radial-gradient(110% 70% at 85% 0%, var(--cover-2) 0%, transparent 62%), var(--cover);
+  }
+  .cover .wrap--wide{
+    display:grid; grid-template-columns:1fr auto; align-items:center; gap:24px;
+    min-height:calc(100svh - 56px); padding:56px 0;
+  }
+  .cover-text{display:grid; gap:30px; align-content:center}
+  .cover-mark{font-family:var(--serif-en); font-weight:600; letter-spacing:.22em; font-size:14px; color:var(--gold)}
+  .composers{font-family:var(--serif-en); font-weight:400; font-size:clamp(27px, 6.6vw, 42px); line-height:1.12; color:var(--ivory)}
+  .composers span{display:block}
+  .when{display:grid; gap:4px}
+  .when .date{font-size:17px; font-weight:500; color:var(--ivory)}
+  .when .place{font-size:15px; color:var(--ivory-dim)}
+  .when .inst{font-size:13px; color:var(--ivory-dim); margin-top:6px}
+  .cover-actions{display:flex; flex-wrap:wrap; gap:12px 22px; align-items:center}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px;
+    border:1px solid var(--gold); border-radius:2px; color:var(--gold); font-size:14.5px; text-decoration:none; letter-spacing:.02em;
+  }
+  .btn:hover{background:rgba(207,174,107,.08)}
+  .btn--soon{color:var(--ivory-dim); border-color:var(--gold-dim)}
+  .link{font-size:14.5px; color:var(--ivory); text-decoration:underline; text-underline-offset:5px; text-decoration-color:var(--gold-dim)}
+  .link:hover{text-decoration-color:var(--gold)}
+  .cover-title{
+    writing-mode:vertical-rl; text-orientation:mixed;
+    font-family:var(--serif-ko); font-weight:500; font-size:clamp(36px, 10vw, 64px); line-height:1; letter-spacing:.1em;
+    color:var(--ivory); padding-left:14px; border-left:1px solid var(--gold-dim); margin:0;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .cover-text,.cover-title{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+    .cover-title{animation-delay:.18s}
+    @keyframes rise{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+  }
+
+  /* 공통 섹션 */
+  .section{padding:72px 0}
+  .h2{font-size:24px; font-weight:500; letter-spacing:.01em; line-height:1.4; margin-bottom:26px}
+  .h2::before{content:""; display:block; width:28px; height:1px; background:var(--gold); margin-bottom:18px}
+
+  /* 소개 */
+  .about p{font-size:16.5px; line-height:1.95; max-width:34em}
+
+  /* 출연자 */
+  .artists .list{border-bottom:1px solid var(--gold-dim)}
+  .artist{display:grid; grid-template-columns:104px 1fr; gap:20px; padding:28px 0; border-top:1px solid var(--gold-dim)}
+  .photo{position:relative; aspect-ratio:3/4; background:linear-gradient(160deg,#2c1d20,#16100f); border:1px solid var(--gold-dim); overflow:hidden}
+  .photo span{position:absolute; inset:0; display:grid; place-items:center; font-family:var(--serif-en); font-style:italic; font-size:20px; color:var(--gold)}
+  .photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+  .artist h3{font-size:20px; font-weight:600; line-height:1.3}
+  .artist h3 small{display:block; font-size:13px; font-weight:400; color:var(--gold); margin-top:4px; letter-spacing:.04em}
+  .bio{margin-top:12px; font-size:13.5px; line-height:1.75; color:var(--ivory-dim)}
+  .bio li+li{margin-top:2px}
+  @media (min-width:840px){
+    .artists .list{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; border-bottom:0}
+    .artist{grid-template-columns:1fr; padding-top:24px}
+    .photo span{font-size:24px}
+  }
+
+  /* 프로그램 — 인쇄된 프로그램 북 */
+  .program{background:var(--paper); color:var(--ink); padding:80px 0 88px}
+  .program .h2::before{background:var(--garnet)}
+  .work{text-align:center; padding:34px 0}
+  .composer{font-family:var(--serif-en); font-weight:600; font-size:21px; letter-spacing:.02em; color:var(--garnet); line-height:1.3}
+  .composer small{display:block; font-family:var(--serif-ko); font-size:12.5px; font-weight:400; color:var(--ink-dim); margin-top:2px}
+  .work h3{font-family:var(--serif-en); font-weight:500; font-size:clamp(22px, 5.6vw, 27px); line-height:1.25; margin-top:12px}
+  .work h3 em{font-weight:400}
+  .movements{margin-top:14px; font-family:var(--serif-en); font-size:17.5px; line-height:1.6; color:var(--ink-dim); list-style:upper-roman inside}
+  .movements li::marker{color:var(--ink-dim)}
+  .movements--one{list-style:none}
+  .note{text-align:left; margin:24px auto 0; max-width:36em; font-size:15px; line-height:1.95; color:var(--ink)}
+  .intermission{display:flex; align-items:center; gap:18px; margin:10px 0; color:var(--garnet)}
+  .intermission::before,.intermission::after{content:""; flex:1; height:1px; background:var(--garnet-dim)}
+  .intermission span{font-family:var(--serif-en); font-style:italic; font-size:19px; line-height:1}
+  .intermission small{display:block; font-family:var(--serif-ko); font-style:normal; font-size:11.5px; color:var(--ink-dim); margin-top:4px; text-align:center}
+  .program .fine{margin-top:36px; padding-top:18px; border-top:1px solid var(--garnet-dim); font-size:12.5px; color:var(--ink-dim)}
+
+  /* 오시는 길 */
+  .venue .name{font-size:19px; font-weight:600}
+  .venue .addr{color:var(--ivory-dim); margin-top:4px}
+  .maps{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+  .maps .btn{min-height:42px; padding:0 18px; font-size:14px}
+  .venue .tip{margin-top:22px; font-size:14.5px; color:var(--ivory-dim); max-width:34em}
+
+  /* 예매·문의 */
+  .tickets{border-top:1px solid var(--gold-dim)}
+  .tickets .big{font-size:22px; font-weight:500}
+  .tickets .sub{margin-top:8px; color:var(--ivory-dim); max-width:34em}
+  .contact{margin-top:30px; font-size:15px}
+  .contact a{text-decoration-color:var(--gold-dim); text-underline-offset:4px}
+  .share{margin-top:28px; display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+  .share .btn{cursor:pointer; background:none; font-family:inherit}
+  .share .msg{font-size:13.5px; color:var(--ivory-dim)}
+
+  footer{border-top:1px solid var(--gold-dim); padding:36px 0 52px; color:var(--ivory-dim); font-size:13px; line-height:1.9}
+  footer .wordmark{display:inline-block; margin-bottom:8px}
+</style>
+</head>
+
+<body>
+
+<header class="top">
+  <div class="wrap--wide">
+    <a class="wordmark" href="#top">FIRST TRIO</a>
+    <nav aria-label="페이지 안내">
+      <a href="#artists">출연자</a>
+      <a href="#program">프로그램</a>
+      <a href="#venue">오시는 길</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 커버 -->
+  <section class="cover" aria-label="공연 개요">
+    <div class="wrap--wide">
+      <div class="cover-text">
+        <p class="cover-mark">FIRST TRIO</p>
+        <p class="composers"><span>Beethoven</span><span>Rachmaninoff</span><span>Brahms</span></p>
+        <div class="when">
+          <p class="date">2027년 3월 6일 토요일 저녁 7시</p>
+          <p class="place">광주예술의전당 소극장</p>
+          <p class="inst">피아노·바이올린·첼로</p>
+        </div>
+        <div class="cover-actions">
+          <!-- 예매 오픈 후: href를 예매 링크로, 글자를 "예매하기"로 -->
+          <a class="btn btn--soon" href="#tickets">예매 오픈 예정</a>
+          <a class="link" href="#program">프로그램 보기</a>
+        </div>
+      </div>
+      <h1 class="cover-title">피아노 트리오의 밤</h1>
+    </div>
+  </section>
+
+  <!-- 소개 -->
+  <section class="section about" id="about">
+    <div class="wrap">
+      <h2 class="h2">피아노와 현이 나누는 대화</h2>
+      <p>FIRST TRIO는 피아니스트 이창준, 바이올리니스트 윤성근, 첼리스트 최승욱이 함께하는 피아노 트리오입니다. 이번 공연에서는 베토벤, 라흐마니노프, 브람스의 작품을 통해 피아노와 현악기가 나누는 다채로운 음악적 대화를 선보이고자 합니다.</p>
+    </div>
+  </section>
+
+  <!-- 출연자 -->
+  <section class="section artists" id="artists">
+    <div class="wrap--wide">
+      <h2 class="h2">출연자</h2>
+      <div class="list">
+
+        <article class="artist">
+          <div class="photo">
+            <span aria-hidden="true">Piano</span>
+            <img src="images/lee.jpg" alt="피아니스트 이창준" onerror="this.remove()">
+          </div>
+          <div>
+            <h3>이창준 <small>피아노</small></h3>
+            <ul class="bio">
+              <li>전남대학교 의과대학 졸업, 의학박사</li>
+              <li>호남신학대학교 교회음악대학원 피아노 석사 졸업</li>
+              <li>전남대학교병원 이비인후과 진료교수 역임</li>
+              <li>현 전남대학교 의과대학 외래교수 및 퍼스트이비인후과의원 원장</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="artist">
+          <div class="photo">
+            <span aria-hidden="true">Violin</span>
+            <img src="images/yoon.jpg" alt="바이올리니스트 윤성근" onerror="this.remove()">
+          </div>
+          <div>
+            <h3>윤성근 <small>바이올린</small></h3>
+            <ul class="bio">
+              <li>독일 라이프치히 국립음대 연주자과정 졸업</li>
+              <li>독일 로스토크 국립음대 최고연주자과정 최우수 졸업</li>
+              <li>광주챔버오케스트라 창단 및 리더 역임</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="artist">
+          <div class="photo">
+            <span aria-hidden="true">Cello</span>
+            <img src="images/choi.jpg" alt="첼리스트 최승욱" onerror="this.remove()">
+          </div>
+          <div>
+            <h3>최승욱 <small>첼로</small></h3>
+            <ul class="bio">
+              <li>파리국립음악원·블로뉴 국립음악원 졸업</li>
+              <li>독일 에센 국립음대 디플롬(석사) 및 최고연주자과정 졸업</li>
+              <li>현 광주시립교향악단 첼로 수석</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 프로그램 -->
+  <section class="program" id="program">
+    <div class="wrap">
+      <h2 class="h2">프로그램</h2>
+
+      <article class="work">
+        <p class="composer">Ludwig van Beethoven <small>루트비히 판 베토벤</small></p>
+        <h3>Piano Trio No. 4 in B-flat Major, Op. 11 <em>“Gassenhauer”</em></h3>
+        <ol class="movements">
+          <li>Allegro con brio</li>
+          <li>Adagio</li>
+          <li>Tema con variazioni. Allegretto</li>
+        </ol>
+        <p class="note">스물여섯의 베토벤이 1797년 빈에서 쓴 초기 트리오로, 본래 클라리넷·첼로·피아노를 위해 작곡되었습니다. 3악장은 당시 빈에서 크게 유행하던 바이글의 오페라 《L'amor marinaro》 속 아리아 ‘Pria ch'io l'impegno’를 주제로 한 아홉 개의 변주곡인데, ‘가센하우어’는 거리에서 누구나 흥얼거리던 유행가라는 뜻으로 여기서 붙은 별명입니다. 밝고 재치 있는 젊은 베토벤의 얼굴을 만나는 곡입니다.</p>
+      </article>
+
+      <article class="work">
+        <p class="composer">Sergei Rachmaninoff <small>세르게이 라흐마니노프</small></p>
+        <h3>Trio élégiaque No. 1 in G Minor</h3>
+        <ol class="movements movements--one">
+          <li>Lento lugubre</li>
+        </ol>
+        <p class="note">1892년 1월, 모스크바 음악원에 다니던 열여덟 살의 라흐마니노프가 며칠 만에 완성한 단악장 트리오입니다. 피아노가 나지막이 꺼내는 비가의 주제를 현악기가 받아 노래하며 격정으로 치닫고, 마지막에는 그 주제가 장송행진곡이 되어 조용히 사라집니다. 이듬해 차이콥스키의 죽음을 애도하며 쓴 2번과 ‘비가적 트리오’라는 이름을 나누지만, 1번에 담긴 것은 특정한 슬픔이라기보다 젊은 날의 우수에 가깝습니다.</p>
+      </article>
+
+      <div class="intermission" role="separator" aria-label="휴식">
+        <span>Intermission<small>휴식</small></span>
+      </div>
+
+      <article class="work">
+        <p class="composer">Johannes Brahms <small>요하네스 브람스</small></p>
+        <h3>Piano Trio No. 1 in B Major, Op. 8 <em>(1889 revised version)</em></h3>
+        <ol class="movements">
+          <li>Allegro con brio</li>
+          <li>Scherzo. Allegro molto</li>
+          <li>Adagio</li>
+          <li>Allegro</li>
+        </ol>
+        <p class="note">스무 살의 브람스가 1854년에 발표한 첫 실내악 출판작을, 35년이 지난 1889년 쉰여섯의 브람스가 대폭 고쳐 쓴 판본입니다. 그는 출판사에 ‘새 가발을 씌운 게 아니라 머리를 조금 빗겨 주었을 뿐’이라고 농담했지만, 실제로는 스케르초를 제외한 세 악장을 거의 새로 썼습니다. 피아노와 첼로가 넓게 노래하며 여는 1악장의 주제에는 청년의 열정이, 그것을 다듬은 손길에는 노대가의 절제가 함께 담겨 있어, 한 사람의 젊음과 성숙을 한 곡 안에서 듣게 됩니다.</p>
+      </article>
+
+      <p class="fine">프로그램은 연주자 사정에 따라 일부 변경될 수 있습니다.</p>
+    </div>
+  </section>
+
+  <!-- 오시는 길 -->
+  <section class="section venue" id="venue">
+    <div class="wrap">
+      <h2 class="h2">오시는 길</h2>
+      <p class="name">광주예술의전당 소극장</p>
+      <p class="addr">광주 북구 북문대로 60 (운암동)</p>
+      <div class="maps">
+        <a class="btn" href="https://map.kakao.com/?q=%EA%B4%91%EC%A3%BC%EC%98%88%EC%88%A0%EC%9D%98%EC%A0%84%EB%8B%B9" target="_blank" rel="noopener">카카오맵에서 보기</a>
+        <a class="btn" href="https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%EC%98%88%EC%88%A0%EC%9D%98%EC%A0%84%EB%8B%B9" target="_blank" rel="noopener">네이버지도에서 보기</a>
+      </div>
+      <p class="tip">예술의전당 주차장을 이용하실 수 있습니다. 공연 당일은 주차가 혼잡하니 30분 정도 여유를 두고 오시기를 권합니다.</p>
+    </div>
+  </section>
+
+  <!-- 예매·문의 -->
+  <section class="section tickets" id="tickets">
+    <div class="wrap">
+      <h2 class="h2">예매·문의</h2>
+      <p class="big">예매 오픈 예정</p>
+      <p class="sub">공연장 대관이 확정되면 예매처와 티켓 안내를 이곳에 올리겠습니다.</p>
+      <!-- 예매 오픈 후: 위 두 줄을 "예매하기" 버튼(예매 링크)과 티켓 가격 안내로 바꾸기 -->
+      <p class="contact">공연 문의 <a href="mailto:">「문의 이메일」</a></p>
+      <div class="share">
+        <button class="btn" id="share" type="button">공유하기</button>
+        <span class="msg" id="share-msg" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="wordmark" href="#top">FIRST TRIO</a>
+    <p>피아노 이창준 · 바이올린 윤성근 · 첼로 최승욱<br>© 2027 FIRST TRIO</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('share');
+    var msg = document.getElementById('share-msg');
+    btn.addEventListener('click', function () {
+      var data = {
+        title: document.title,
+        text: '피아노 트리오의 밤 — FIRST TRIO, 2027년 3월 6일(토) 오후 7시, 광주예술의전당 소극장',
+        url: location.href
+      };
+      if (navigator.share) {
+        navigator.share(data).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(location.href).then(function () {
+          msg.textContent = '링크를 복사했습니다';
+          setTimeout(function () { msg.textContent = ''; }, 2500);
+        });
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
